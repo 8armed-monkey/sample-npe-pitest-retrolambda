@@ -1,0 +1,33 @@
+def PROJECT_GROUP = 'test'
+def BUILD_VERSION = '0.0.1'
+
+group = PROJECT_GROUP
+version = BUILD_VERSION
+
+apply plugin: 'java'
+
+project.ext.PROJECT_GROUP = PROJECT_GROUP
+project.ext.BUILD_VERSION = BUILD_VERSION
+
+// Versions
+project.ext.RX_JAVA_VERSION = '2.0.6'
+project.ext.JUNIT_VERSION = '4.12'
+project.ext.MOCKITO_VERSION = '1.10.19'
+project.ext.HAMCREST_VERSION = '1.3'
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.1.11'
+        classpath 'org.jfrog.buildinfo:build-info-extractor-gradle:4.+'
+        classpath 'me.tatarka:gradle-retrolambda:3.6.0'
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
